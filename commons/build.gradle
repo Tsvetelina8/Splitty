@@ -1,0 +1,11 @@
+
+java {
+	sourceCompatibility = '21'
+}
+
+
+dependencies {
+	implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.1.0'
+	implementation group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '3.0.3'
+
+}

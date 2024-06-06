@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.scenes.EditEventCtrl">
+   <bottom>
+      <HBox>
+         <children>
+            <HBox prefHeight="25.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="eventSettleDebts" mnemonicParsing="false" onAction="#settleDebts" prefWidth="150.0" text="%edit-event-settle-debts" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#showStartScreen" prefHeight="25.0" prefWidth="150.0" text="%common-back" textAlignment="RIGHT" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="25.0" right="25.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="750.0" VBox.vgrow="NEVER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="550.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" HBox.hgrow="NEVER">
+                           <children>
+                              <Button fx:id="editTitle" mnemonicParsing="false" onAction="#changeTitle" prefHeight="25.0" prefWidth="150.0" text="%edit-event-edit-title" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="54.0" prefWidth="400.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="eventName" alignment="CENTER" prefHeight="30.0" prefWidth="385.0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox HBox.hgrow="NEVER">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="62.0" prefWidth="150.0" spacing="10.0">
+                                 <children>
+                                    <Button fx:id="eventSendInvites" mnemonicParsing="false" onAction="#sendInvites" prefWidth="200.0" text="%edit-event-send-invites" />
+                                    <Label fx:id="inviteCodeLabel" alignment="CENTER" onMouseClicked="#copyCodeToClipboard" prefHeight="18.0" prefWidth="111.0" text="%edit-event-code" textAlignment="CENTER">
+                                       <tooltip>
+                                          <Tooltip fx:id="copyTip" text="%edit-event-code-copy" />
+                                       </tooltip>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0" VBox.vgrow="NEVER">
+               <children>
+                  <VBox prefHeight="82.0" prefWidth="385.0" spacing="10.0" HBox.hgrow="NEVER">
+                     <children>
+                        <Label fx:id="totalExpenses" alignment="CENTER" text="%edit-event-total-expenses">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="paidLabel" alignment="CENTER" text="%edit-event-paid-for">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="56.0" prefWidth="400.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="owesLabel" alignment="CENTER" text="%edit-event-owes">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="eventAddExpense" mnemonicParsing="false" onAction="#addExpense" text="%edit-event-add-expense" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="56.0" prefWidth="300.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" text="%edit-event-participants">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="addNewParticipant" mnemonicParsing="false" onAction="#addNewParticipant" prefHeight="26.0" prefWidth="150.0" text="%edit-event-add-new-participant" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox VBox.vgrow="ALWAYS">
+               <children>
+                  <TabPane prefHeight="238.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+                    <tabs>
+                      <Tab fx:id="eventExpensesAll" text="%edit-event-all">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <ListView fx:id="eventExpensesList" prefHeight="194.4" prefWidth="700.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab fx:id="eventExpensesIncludingX" onSelectionChanged="#showExpensesIncludingX" text="%edit-event-including-x">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <ListView fx:id="eventExpensesListIncluding" prefHeight="194.4" prefWidth="700.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab fx:id="eventExpensesFromX" onSelectionChanged="#showExpensesFromX" text="%edit-event-from-x">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0">
+                                 <children>
+                                    <ListView fx:id="eventExpensesListFrom" prefHeight="194.4" prefWidth="700.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+                  <ListView fx:id="participants" prefHeight="200.0" prefWidth="300.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="%menu-options">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#contributeLanguage" text="%menu-add-translation" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="%menu-help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#aboutPage" text="%menu-shortcuts" />
+               </items>
+            </Menu>
+            <Menu fx:id="languageIndicator" mnemonicParsing="false" />
+         </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

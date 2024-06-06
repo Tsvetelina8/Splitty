@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.scenes.AddExpenseCtrl">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="%menu-options">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#contributeLanguage" text="%menu-add-translation" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="%menu-help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#aboutPage" text="%menu-shortcuts" />
+               </items>
+            </Menu>
+            <Menu fx:id="languageIndicator" mnemonicParsing="false" />
+         </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefWidth="350.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="expenseAdd" mnemonicParsing="false" onAction="#add" text="%common-add" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefWidth="300.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="expenseAbort" mnemonicParsing="false" onAction="#abort" text="%common-abort" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="25.0" right="25.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label fx:id="title" text="%create-expense-title">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="125.0" spacing="20.0">
+                     <children>
+                        <Label text="%create-expense-who-paid">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="%create-expense-what-for">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label text="%create-expense-how-much">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="300.0" spacing="15.0">
+                     <children>
+                        <HBox prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <ChoiceBox fx:id="payer" prefWidth="150.0" />
+                              <Label alignment="CENTER" text="%create-expense-when" textAlignment="RIGHT">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <TextField fx:id="expenseName" prefHeight="25.0" prefWidth="250.0" />
+                        <HBox prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Spinner fx:id="expenseValue" editable="true" />
+                              <ChoiceBox fx:id="expenseCurrency" prefWidth="100.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <DatePicker fx:id="expenseDate" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="190.0" prefWidth="125.0" spacing="10.0">
+                     <children>
+                        <Label text="%create-expense-how-to-split">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <RadioButton fx:id="equallyRadio" mnemonicParsing="false" text="%create-expense-equally" />
+                        <RadioButton fx:id="selectPeopleRadio" mnemonicParsing="false" text="%create-expense-select-people" />
+                     </children>
+                  </VBox>
+                  <ListView fx:id="selectPeopleListView" prefHeight="132.0" prefWidth="140.0" />
+               </children>
+            </HBox>
+            <HBox prefWidth="200.0">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="125.0" text="%create-expense-expense-type">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="expenseType" prefHeight="25.0" prefWidth="350.0" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="25.0" right="25.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

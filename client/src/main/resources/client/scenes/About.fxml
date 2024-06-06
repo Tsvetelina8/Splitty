@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.scenes.AboutCtrl">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="380.0" prefWidth="603.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button id="back_button" fx:id="backy" layoutX="574.0" layoutY="361.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+            <GridPane gridLinesVisible="true" layoutX="22.0" layoutY="64.0" prefHeight="112.0" prefWidth="254.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.20001220703125" minWidth="10.0" prefWidth="125.59996337890624" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="128.80003662109374" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="56.8" minHeight="10.0" prefHeight="56.8" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="23.600012207031256" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Arrow keys (&lt;, &gt;) " textAlignment="CENTER" wrappingWidth="122.70674133300781" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Navigate tabs" textAlignment="CENTER" wrappingWidth="132.38310050964355" GridPane.columnIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Escape" textAlignment="CENTER" wrappingWidth="125.18305397033691" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Go back a page" textAlignment="CENTER" wrappingWidth="129.98306465148926" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tab" textAlignment="CENTER" wrappingWidth="125.18305397033691" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Navigate through buttons and text fields" textAlignment="CENTER" wrappingWidth="125.18305397033691" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <Text layoutX="25.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Everywhere">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <GridPane gridLinesVisible="true" layoutX="320.0" layoutY="64.0" prefHeight="286.0" prefWidth="282.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.20001220703125" minWidth="10.0" prefWidth="125.6" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="129.6" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="42.799993896484374" minHeight="10.0" prefHeight="42.799993896484374" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter (focus on textfield)" textAlignment="CENTER" wrappingWidth="122.70674133300781" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Create event/join event" textAlignment="CENTER" wrappingWidth="132.38310050964355" GridPane.columnIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter (focus on button)" textAlignment="CENTER" wrappingWidth="125.18305397033691" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Presses button" textAlignment="CENTER" wrappingWidth="129.98306465148926" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Arrow keys (Up, Down)" textAlignment="CENTER" wrappingWidth="125.18305397033691" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Scroll through recent events" textAlignment="CENTER" wrappingWidth="132.38299751281738" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ctrl + L" textAlignment="CENTER" wrappingWidth="132.38299751281738" GridPane.rowIndex="3" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Login as admin" textAlignment="CENTER" wrappingWidth="132.38299751281738" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ctrl + D" textAlignment="CENTER" wrappingWidth="132.38299751281738" GridPane.rowIndex="4" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Remove selected event from recents" textAlignment="CENTER" wrappingWidth="132.38299751281738" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+            <Text layoutX="320.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home page">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+            <GridPane gridLinesVisible="true" layoutX="22.0" layoutY="224.0" prefHeight="140.0" prefWidth="254.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.20001220703125" minWidth="10.0" prefWidth="125.59996337890624" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="128.80003662109374" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="42.799993896484374" minHeight="10.0" prefHeight="42.799993896484374" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ctrl + D / Delete" textAlignment="CENTER" wrappingWidth="122.70674133300781" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Delete selected events" textAlignment="CENTER" wrappingWidth="132.38310050964355" GridPane.columnIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ctrl + I" textAlignment="CENTER" wrappingWidth="125.18305397033691" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Import an event" textAlignment="CENTER" wrappingWidth="127.58310127258301" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ctrl + E" textAlignment="CENTER" wrappingWidth="125.18305397033691" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Download selected event" textAlignment="CENTER" wrappingWidth="132.38299751281738" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <Text layoutX="24.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Overview">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+    </children>
+</VBox>
